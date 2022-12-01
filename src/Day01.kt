@@ -1,17 +1,17 @@
-fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
-    }
+import java.io.File
+import java.util.regex.*
+import kotlin.collections.*
+import kotlin.text.split
 
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
+fun Day01() {
+    val snacksPerPersons = File("src/input/day01.txt").readText().split("\r\n\r\n")
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
+    var calorieMapSorted =
+            snacksPerPersons.map { it.split("\r\n").map { it.toInt() }.sum() }.sortedDescending()
 
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    val task1 = calorieMapSorted.first()
+    val task2 = calorieMapSorted.take(3).sum()
+
+    println("Task 1: $task1")
+    println("Task 2: $task2")
 }
