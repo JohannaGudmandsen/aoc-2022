@@ -3,5 +3,7 @@ fun main() {
     //Day02()
     //Day03()
     //Day04()
-    Day05()
+    //Day05()
+    //Day06()
+    Day07()
 }
